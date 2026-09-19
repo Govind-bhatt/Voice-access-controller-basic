@@ -1,0 +1,4 @@
+vosk
+sounddevice
+PyAutoGUI
+playwright

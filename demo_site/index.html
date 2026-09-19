@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Assistant Demo Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 650px;
+            margin: 50px auto;
+            padding: 30px;
+            line-height: 1.6;
+            background: #f4f6f8;
+            color: #1f2933;
+        }
+
+        main {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+        }
+
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 18px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #176b3a;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Voice Assistant Demo Page</h1>
+
+        <p>
+            This is a local, harmless test page for browser automation.
+        </p>
+
+        <label for="test-text">Test text</label>
+        <input
+            id="test-text"
+            name="test-text"
+            type="text"
+            placeholder="Enter harmless test text"
+        >
+
+        <button id="demo-button" type="button">
+            Run harmless demo
+        </button>
+
+        <p id="result" aria-live="polite">
+            The demo has not been run yet.
+        </p>
+    </main>
+
+    <script>
+        const input = document.getElementById("test-text");
+        const button = document.getElementById("demo-button");
+        const result = document.getElementById("result");
+
+        button.addEventListener("click", () => {
+            const text = input.value.trim();
+
+            if (text) {
+                result.textContent = `Demo completed with test text: ${text}`;
+            } else {
+                result.textContent = "Demo completed without test text.";
+            }
+        });
+    </script>
+</body>
+</html>
